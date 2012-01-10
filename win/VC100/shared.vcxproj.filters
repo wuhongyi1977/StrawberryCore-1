@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Database">
+      <UniqueIdentifier>{a438e543-b8d2-48e4-94de-50b46e6a3ed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Database\DataStores">
+      <UniqueIdentifier>{fe2ff9d3-fdb9-4524-8cf7-e58c457bf41d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Log">
+      <UniqueIdentifier>{39a8108e-b96b-436d-a884-4a514d2cee88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{0effd4f5-3762-49e6-a54c-5b07cc38fd38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{e70b63d1-1c28-45be-be05-2af2c3766320}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Auth">
+      <UniqueIdentifier>{b482d426-7fb6-43f5-bf89-23cb623e3e1e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\shared\Database\Database.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Database\DatabaseMysql.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Database\Field.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Database\QueryResultMysql.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Database\SqlDelayThread.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Database\SqlOperations.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Database\SqlPreparedStatement.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Database\SQLStorage.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Database\DBCFileLoader.cpp">
+      <Filter>Database\DataStores</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Log.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\ByteBuffer.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Common.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\ProgressBar.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Util.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Config\Config.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Auth\AuthCrypt.cpp">
+      <Filter>Auth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Auth\BigNumber.cpp">
+      <Filter>Auth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Auth\HMACSHA1.cpp">
+      <Filter>Auth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Auth\md5.c">
+      <Filter>Auth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Auth\SARC4.cpp">
+      <Filter>Auth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\Auth\Sha1.cpp">
+      <Filter>Auth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shared\ServiceWin32.cpp" />
+    <ClCompile Include="..\..\src\shared\Threading.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\shared\Database\Database.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\DatabaseEnv.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\DatabaseImpl.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\DatabaseMysql.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\Field.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\MySQLDelayThread.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\QueryResult.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\QueryResultMysql.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\SqlDelayThread.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\SqlOperations.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\SqlPreparedStatement.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\SQLStorage.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\SQLStorageImpl.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\DBCFileLoader.h">
+      <Filter>Database\DataStores</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Database\DBCStore.h">
+      <Filter>Database\DataStores</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Log.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\ByteBuffer.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Errors.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dep\include\mersennetwister\MersenneTwister.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\ProgressBar.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Timer.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Util.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\WorldPacket.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Config\Config.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Auth\AuthCrypt.h">
+      <Filter>Auth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Auth\BigNumber.h">
+      <Filter>Auth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Auth\HMACSHA1.h">
+      <Filter>Auth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Auth\md5.h">
+      <Filter>Auth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Auth\SARC4.h">
+      <Filter>Auth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Auth\Sha1.h">
+      <Filter>Auth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shared\Common.h" />
+    <ClInclude Include="..\..\src\shared\LockedQueue.h" />
+    <ClInclude Include="..\..\src\shared\revision_nr.h" />
+    <ClInclude Include="..\..\src\shared\ServiceWin32.h" />
+    <ClInclude Include="..\..\src\shared\Threading.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\src\shared\revision.h" />
+    <CustomBuild Include="..\..\src\shared\SystemConfig.h.in" />
+  </ItemGroup>
+</Project>

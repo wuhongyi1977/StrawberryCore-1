@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_NoPCH|Win32">
+      <Configuration>Debug_NoPCH</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_NoPCH|x64">
+      <Configuration>Debug_NoPCH</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A3A04E47-43A2-4C08-90B3-029CEF558594}</ProjectGuid>
+    <RootNamespace>strawberryworld</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>strawberryworld</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NoPCH|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NoPCH|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NoPCH|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NoPCH|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\strawberryworld__$(Platform)_$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\strawberryworld__$(Platform)_$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\strawberryworld__$(Platform)_$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\strawberryworld__$(Platform)_$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\strawberryworld__$(Platform)_$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\strawberryworld__$(Platform)_$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\strawberryworld__$(Platform)_$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\strawberryworld__$(Platform)_$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_NoPCH|Win32'">.\strawberryworld__$(Platform)_$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_NoPCH|Win32'">.\strawberryworld__$(Platform)_$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug_NoPCH|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_NoPCH|x64'">.\strawberryworld__$(Platform)_$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_NoPCH|x64'">.\strawberryworld__$(Platform)_$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug_NoPCH|x64'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <TypeLibraryName>.\strawberryworld__$(Platform)_$(Configuration)\strawberryworld.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\dep\include\gsoap;..\..\dep\include;..\..\src\framework;..\..\src\shared;..\..\src\game;..\..\src\strawberryworld;..\..\dep\ACE_wrappers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>VERSION=0.17.0-DEV;WIN32;NDEBUG;_CONSOLE;ENABLE_CLI;_SECURE_SCL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\strawberryworld__$(Platform)_$(Configuration)\strawberryworld.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\strawberryworld__$(Platform)_$(Configuration)\</AssemblerListingLocation>
+      <ObjectFileName>.\strawberryworld__$(Platform)_$(Configuration)\</ObjectFileName>
+      <ProgramDataBaseFileName>.\strawberryworld__$(Platform)_$(Configuration)\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386
+/LTCG %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>Detour.lib;libmySQL.lib;libeay32.lib;ws2_32.lib;winmm.lib;odbc32.lib;odbccp32.lib;advapi32.lib;dbghelp.lib;framework.lib;msvcrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\$(Platform)_$(Configuration)\StrawberryWorld.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\dep\lib\$(Platform)_$(Configuration);.\framework__$(Platform)_$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\bin\$(Platform)_$(Configuration)\strawberryworld.pdb</ProgramDatabaseFile>
+      <MapFileName>..\..\bin\$(Platform)_$(Configuration)\strawberryworld.map</MapFileName>
+      <SubSystem>Console</SubSystem>
+      <StackReserveSize>4194304</StackReserveSize>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)strawberryworld.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy ..\..\dep\lib\$(Platform)_$(Configuration)\*.dll ..\..\bin\$(Platform)_$(Configuration)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\strawberryworld__$(Platform)_$(Configuration)\strawberryworld.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\dep\include\gsoap;..\..\dep\include;..\..\src\framework;..\..\src\shared;..\..\src\game;..\..\src\strawberryworld;..\..\dep\ACE_wrappers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>VERSION=0.17.0-DEV;WIN32;NDEBUG;_CONSOLE;ENABLE_CLI;_SECURE_SCL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\strawberryworld__$(Platform)_$(Configuration)\strawberryworld.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\strawberryworld__$(Platform)_$(Configuration)\</AssemblerListingLocation>
+      <ObjectFileName>.\strawberryworld__$(Platform)_$(Configuration)\</ObjectFileName>
+      <ProgramDataBaseFileName>.\strawberryworld__$(Platform)_$(Configuration)\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Detour.lib;libmySQL.lib;libeay32.lib;ws2_32.lib;winmm.lib;odbc32.lib;odbccp32.lib;advapi32.lib;dbghelp.lib;framework.lib;msvcrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\$(Platform)_$(Configuration)\StrawberryWorld.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\dep\lib\$(Platform)_$(Configuration);.\framework__$(Platform)_$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\bin\$(Platform)_$(Configuration)\strawberryworld.pdb</ProgramDatabaseFile>
+      <MapFileName>..\..\bin\$(Platform)_$(Configuration)\strawberryworld.map</MapFileName>
+      <SubSystem>Console</SubSystem>
+      <StackReserveSize>4194304</StackReserveSize>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)strawberryworld.lib</ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy ..\..\dep\lib\$(Platform)_$(Configuration)\*.dll ..\..\bin\$(Platform)_$(Configuration)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <TypeLibraryName>.\strawberryworld__$(Platform)_$(Configuration)\strawberryworld.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\dep\include\gsoap;..\..\dep\include;..\..\src\framework;..\..\src\shared;..\..\src\game;..\..\src\strawberryworld;..\..\dep\ACE_wrappers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>VERSION=0.17.0-DEV;WIN32;_DEBUG;ARCTIUM_DEBUG;_CONSOLE;ENABLE_CLI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\strawberryworld__$(Platform)_$(Configuration)\strawberryworld.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\strawberryworld__$(Platform)_$(Configuration)\</AssemblerListingLocation>
+      <ObjectFileName>.\strawberryworld__$(Platform)_$(Configuration)\</ObjectFileName>
+      <ProgramDataBaseFileName>.\strawberryworld__$(Platform)_$(Configuration)\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>Detour.lib;libmySQL.lib;libeay32.lib;ws2_32.lib;winmm.lib;odbc32.lib;odbccp32.lib;advapi32.lib;dbghelp.lib;framework.lib;msvcrtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\$(Platform)_$(Configuration)\StrawberryWorld.exe</OutputFile>
+      <Version>
+      </Version>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\dep\lib\$(Platform)_$(Configuration);.\framework__$(Platform)_$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\bin\$(Platform)_$(Configuration)\strawberryworld.pdb</ProgramDatabaseFile>
+      <MapFileName>..\..\bin\$(Platform)_$(Configuration)\strawberryworld.map</MapFileName>
+      <SubSystem>Console</SubSystem>
+      <StackReserveSize>4194304</StackReserveSize>
+      <LargeAddressAware>true</LargeAddressAware>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)strawberryworld.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy ..\..\dep\lib\$(Platform)_$(Configuration)\*.dll ..\..\bin\$(Platform)_$(Configuration)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\strawberryworld__$(Platform)_$(Configuration)\strawberryworld.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\dep\include\gsoap;..\..\dep\include;..\..\src\framework;..\..\src\shared;..\..\src\game;..\..\src\strawberryworld;..\..\dep\ACE_wrappers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>VERSION=0.17.0-DEV;WIN32;_DEBUG;ARCTIUM_DEBUG;_CONSOLE;ENABLE_CLI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\strawberryworld__$(Platform)_$(Configuration)\strawberryworld.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\strawberryworld__$(Platform)_$(Configuration)\</AssemblerListingLocation>
+      <ObjectFileName>.\strawberryworld__$(Platform)_$(Configuration)\</ObjectFileName>
+      <ProgramDataBaseFileName>.\strawberryworld__$(Platform)_$(Configuration)\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Detour.lib;libmySQL.lib;libeay32.lib;ws2_32.lib;winmm.lib;odbc32.lib;odbccp32.lib;advapi32.lib;dbghelp.lib;framework.lib;msvcrtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\$(Platform)_$(Configuration)\StrawberryWorld.exe</OutputFile>
+      <Version>
+      </Version>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\dep\lib\$(Platform)_$(Configuration);.\framework__$(Platform)_$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\bin\$(Platform)_$(Configuration)\strawberryworld.pdb</ProgramDatabaseFile>
+      <MapFileName>..\..\bin\$(Platform)_$(Configuration)\strawberryworld.map</MapFileName>
+      <SubSystem>Console</SubSystem>
+      <StackReserveSize>4194304</StackReserveSize>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)strawberryworld.lib</ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy ..\..\dep\lib\$(Platform)_$(Configuration)\*.dll ..\..\bin\$(Platform)_$(Configuration)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NoPCH|Win32'">
+    <Midl>
+      <TypeLibraryName>.\strawberryworld__$(Platform)_$(Configuration)\strawberryworld.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\dep\include\gsoap;..\..\dep\include;..\..\src\framework;..\..\src\shared;..\..\src\game;..\..\src\strawberryworld;..\..\dep\ACE_wrappers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>VERSION=0.17.0-DEV;WIN32;_DEBUG;ARCTIUM_DEBUG;_CONSOLE;ENABLE_CLI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\strawberryworld__$(Platform)_$(Configuration)\strawberryworld.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\strawberryworld__$(Platform)_$(Configuration)\</AssemblerListingLocation>
+      <ObjectFileName>.\strawberryworld__$(Platform)_$(Configuration)\</ObjectFileName>
+      <ProgramDataBaseFileName>.\strawberryworld__$(Platform)_$(Configuration)\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>Detour.lib;libmySQL.lib;libeay32.lib;ws2_32.lib;winmm.lib;odbc32.lib;odbccp32.lib;advapi32.lib;dbghelp.lib;framework.lib;msvcrtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\$(Platform)_$(Configuration)\StrawberryWorld.exe</OutputFile>
+      <Version>
+      </Version>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\dep\lib\$(Platform)_debug;.\framework__$(Platform)_$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\bin\$(Platform)_$(Configuration)\strawberryworld.pdb</ProgramDatabaseFile>
+      <MapFileName>..\..\bin\$(Platform)_$(Configuration)\strawberryworld.map</MapFileName>
+      <SubSystem>Console</SubSystem>
+      <StackReserveSize>4194304</StackReserveSize>
+      <LargeAddressAware>true</LargeAddressAware>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)strawberryworld.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy ..\..\dep\lib\$(Platform)_debug\*.dll ..\..\bin\$(Platform)_$(Configuration)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NoPCH|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\strawberryworld__$(Platform)_$(Configuration)\strawberryworld.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\dep\include\gsoap;..\..\dep\include;..\..\src\framework;..\..\src\shared;..\..\src\game;..\..\src\strawberryworld;..\..\dep\ACE_wrappers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>VERSION=0.17.0-DEV;WIN32;_DEBUG;ARCTIUM_DEBUG;_CONSOLE;ENABLE_CLI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\strawberryworld__$(Platform)_$(Configuration)\strawberryworld.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\strawberryworld__$(Platform)_$(Configuration)\</AssemblerListingLocation>
+      <ObjectFileName>.\strawberryworld__$(Platform)_$(Configuration)\</ObjectFileName>
+      <ProgramDataBaseFileName>.\strawberryworld__$(Platform)_$(Configuration)\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Detour.lib;libmySQL.lib;libeay32.lib;ws2_32.lib;winmm.lib;odbc32.lib;odbccp32.lib;advapi32.lib;dbghelp.lib;framework.lib;msvcrtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\$(Platform)_$(Configuration)\StrawberryWorld.exe</OutputFile>
+      <Version>
+      </Version>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\dep\lib\$(Platform)_debug;.\framework__$(Platform)_$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\bin\$(Platform)_$(Configuration)\strawberryworld.pdb</ProgramDatabaseFile>
+      <MapFileName>..\..\bin\$(Platform)_$(Configuration)\strawberryworld.map</MapFileName>
+      <SubSystem>Console</SubSystem>
+      <StackReserveSize>4194304</StackReserveSize>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)strawberryworld.lib</ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy ..\..\dep\lib\$(Platform)_debug\*.dll ..\..\bin\$(Platform)_$(Configuration)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\strawberryworld\StrawberrySoap.cpp" />
+    <ClCompile Include="..\..\src\strawberryworld\CliRunnable.cpp" />
+    <ClCompile Include="..\..\src\strawberryworld\Main.cpp" />
+    <ClCompile Include="..\..\src\strawberryworld\Master.cpp" />
+    <ClCompile Include="..\..\src\strawberryworld\RASocket.cpp" />
+    <ClCompile Include="..\..\src\strawberryworld\soapC.cpp" />
+    <ClCompile Include="..\..\src\strawberryworld\soapServer.cpp" />
+    <ClCompile Include="..\..\dep\src\gsoap\stdsoap2.cpp" />
+    <ClCompile Include="..\..\src\shared\WheatyExceptionReport.cpp" />
+    <ClCompile Include="..\..\src\strawberryworld\WorldRunnable.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\strawberryworld\StrawberrySoap.h" />
+    <ClInclude Include="..\..\src\strawberryworld\CliRunnable.h" />
+    <ClInclude Include="..\..\src\strawberryworld\Master.h" />
+    <ClInclude Include="..\..\src\strawberryworld\RASocket.h" />
+    <ClInclude Include="..\..\src\strawberryworld\soapH.h" />
+    <ClInclude Include="..\..\src\strawberryworld\soapStub.h" />
+    <ClInclude Include="..\..\dep\include\gsoap\stdsoap2.h" />
+    <ClInclude Include="..\..\src\shared\WheatyExceptionReport.h" />
+    <ClInclude Include="..\..\src\strawberryworld\WorldRunnable.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\src\strawberryworld\strawberryworld.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\dep\recastnavigation\Detour\win\VC90\Detour.vcxproj">
+      <Project>{5fdc0ebc-3f80-4518-a5df-1cd5bbeb64f7}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="strawberryrealm.vcxproj">
+      <Project>{563e9905-3657-460c-ae63-0ac39d162e23}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="game.vcxproj">
+      <Project>{1dc6c4da-a028-41f3-877d-d5400c594f88}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="shared.vcxproj">
+      <Project>{90297c34-f231-4df4-848e-a74bcc0e40ed}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

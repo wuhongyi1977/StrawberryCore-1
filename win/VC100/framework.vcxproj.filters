@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GameSystem">
+      <UniqueIdentifier>{a61f5fdf-fb78-4522-915c-09af18a1274d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{3d86e634-24ab-44e1-a959-d7c094876f31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Policies">
+      <UniqueIdentifier>{29991633-ff03-4629-b9a9-c39e2cda9635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{0c6e35d2-eef3-44bd-bbc1-ec755282aad4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities\LinkedReference">
+      <UniqueIdentifier>{94a86c88-11dd-44ba-9bf6-c229d1459071}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dynamic">
+      <UniqueIdentifier>{601c8d28-5eb2-4814-af6b-cd242b20bc8f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\framework\GameSystem\Grid.h">
+      <Filter>GameSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\GameSystem\GridLoader.h">
+      <Filter>GameSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\GameSystem\GridReference.h">
+      <Filter>GameSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\GameSystem\GridRefManager.h">
+      <Filter>GameSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\GameSystem\NGrid.h">
+      <Filter>GameSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\GameSystem\TypeContainer.h">
+      <Filter>GameSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\GameSystem\TypeContainerFunctions.h">
+      <Filter>GameSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\GameSystem\TypeContainerVisitor.h">
+      <Filter>GameSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Platform\CompilerDefs.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Platform\Define.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Policies\CreationPolicy.h">
+      <Filter>Policies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Policies\ObjectLifeTime.h">
+      <Filter>Policies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Policies\Singleton.h">
+      <Filter>Policies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Policies\SingletonImp.h">
+      <Filter>Policies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Policies\ThreadingModel.h">
+      <Filter>Policies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Utilities\ByteConverter.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Utilities\Callback.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Utilities\EventProcessor.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Utilities\LinkedList.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Utilities\TypeList.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Utilities\UnorderedMapSet.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Utilities\LinkedReference\Reference.h">
+      <Filter>Utilities\LinkedReference</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Utilities\LinkedReference\RefManager.h">
+      <Filter>Utilities\LinkedReference</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Dynamic\FactoryHolder.h">
+      <Filter>Dynamic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\framework\Dynamic\ObjectRegistry.h">
+      <Filter>Dynamic</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\framework\Policies\MemoryManagement.cpp">
+      <Filter>Policies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\framework\Policies\ObjectLifeTime.cpp">
+      <Filter>Policies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\framework\Utilities\EventProcessor.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
