@@ -2,22 +2,22 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="GameSystem">
-      <UniqueIdentifier>{a61f5fdf-fb78-4522-915c-09af18a1274d}</UniqueIdentifier>
+      <UniqueIdentifier>{b6f26a81-b48b-4398-ae71-a150422673b8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform">
-      <UniqueIdentifier>{3d86e634-24ab-44e1-a959-d7c094876f31}</UniqueIdentifier>
+      <UniqueIdentifier>{6309ff5e-66d8-473c-941b-5d700efc42cd}</UniqueIdentifier>
     </Filter>
     <Filter Include="Policies">
-      <UniqueIdentifier>{29991633-ff03-4629-b9a9-c39e2cda9635}</UniqueIdentifier>
+      <UniqueIdentifier>{5a609bc0-6ea5-4eec-8fc3-247863778375}</UniqueIdentifier>
     </Filter>
     <Filter Include="Utilities">
-      <UniqueIdentifier>{0c6e35d2-eef3-44bd-bbc1-ec755282aad4}</UniqueIdentifier>
+      <UniqueIdentifier>{4b8a3be8-660c-4ba2-a507-4fd3959b9b08}</UniqueIdentifier>
     </Filter>
     <Filter Include="Utilities\LinkedReference">
-      <UniqueIdentifier>{94a86c88-11dd-44ba-9bf6-c229d1459071}</UniqueIdentifier>
+      <UniqueIdentifier>{7d1ef53f-85ad-4c94-90f0-6e02c6db4d2d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Dynamic">
-      <UniqueIdentifier>{601c8d28-5eb2-4814-af6b-cd242b20bc8f}</UniqueIdentifier>
+      <UniqueIdentifier>{5ac80c9b-107a-430e-8446-8dbf43cfb55e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

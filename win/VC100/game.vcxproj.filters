@@ -2,34 +2,34 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="World/Handlers">
-      <UniqueIdentifier>{9e3720c0-cd95-4572-ac6f-fe8546b8754e}</UniqueIdentifier>
+      <UniqueIdentifier>{7319a010-b2ed-4523-b0a8-db640f22a4df}</UniqueIdentifier>
     </Filter>
     <Filter Include="Motion generators">
-      <UniqueIdentifier>{8f3eafc3-3da0-426a-8e6f-957155b9b095}</UniqueIdentifier>
+      <UniqueIdentifier>{26cbc86a-0e4f-48b5-8bd7-dcb1006e7832}</UniqueIdentifier>
     </Filter>
     <Filter Include="Object">
-      <UniqueIdentifier>{b812e49b-4ec4-42f7-95a7-8e70fae959e7}</UniqueIdentifier>
+      <UniqueIdentifier>{93520e0b-16f0-4310-a524-4824669aec43}</UniqueIdentifier>
     </Filter>
     <Filter Include="Server">
-      <UniqueIdentifier>{583081b0-6d0d-4cbc-9ca7-0b3205a33da1}</UniqueIdentifier>
+      <UniqueIdentifier>{45b00d98-d07a-4b03-8eae-66c4824982d9}</UniqueIdentifier>
     </Filter>
     <Filter Include="Chat Commands">
-      <UniqueIdentifier>{99ed70da-73a8-4654-ade6-2bef9bfc27c0}</UniqueIdentifier>
+      <UniqueIdentifier>{040510e3-e70e-4380-a8df-05234435e598}</UniqueIdentifier>
     </Filter>
     <Filter Include="Tool">
-      <UniqueIdentifier>{acc5c24f-ba6c-465f-9ea6-187763278402}</UniqueIdentifier>
+      <UniqueIdentifier>{21f1507f-5668-454c-8868-f855993a4ac7}</UniqueIdentifier>
     </Filter>
     <Filter Include="References">
-      <UniqueIdentifier>{d97f8b29-6fa8-4070-beb8-5d950da9577b}</UniqueIdentifier>
+      <UniqueIdentifier>{c728563b-c39a-4caa-8dd9-79889a5fb1e8}</UniqueIdentifier>
     </Filter>
     <Filter Include="vmaps">
-      <UniqueIdentifier>{0ea385fe-24da-4038-979b-6fb238ddf30e}</UniqueIdentifier>
+      <UniqueIdentifier>{c3ef2a31-7111-4f3c-b3dd-447b0ad2a3c2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Movement">
-      <UniqueIdentifier>{f6c873f4-ca82-49a0-9e7a-c40a6181cd2f}</UniqueIdentifier>
+      <UniqueIdentifier>{23478410-8be6-4a34-8d16-c075aa42bb74}</UniqueIdentifier>
     </Filter>
     <Filter Include="Warden">
-      <UniqueIdentifier>{285cc9a3-abf3-4438-9ef2-c6f5b62a3508}</UniqueIdentifier>
+      <UniqueIdentifier>{2abfb4d2-4135-4c97-ae0e-94c7b4153c66}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

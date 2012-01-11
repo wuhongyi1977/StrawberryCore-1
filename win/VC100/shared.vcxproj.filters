@@ -2,22 +2,22 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Database">
-      <UniqueIdentifier>{a438e543-b8d2-48e4-94de-50b46e6a3ed4}</UniqueIdentifier>
+      <UniqueIdentifier>{6ba0a16c-6ec0-4398-aedf-08c8498775dd}</UniqueIdentifier>
     </Filter>
     <Filter Include="Database\DataStores">
-      <UniqueIdentifier>{fe2ff9d3-fdb9-4524-8cf7-e58c457bf41d}</UniqueIdentifier>
+      <UniqueIdentifier>{a8745638-14e9-400b-9158-d03827650b89}</UniqueIdentifier>
     </Filter>
     <Filter Include="Log">
-      <UniqueIdentifier>{39a8108e-b96b-436d-a884-4a514d2cee88}</UniqueIdentifier>
+      <UniqueIdentifier>{b24dbdc5-7218-457a-a410-ae428afae1fa}</UniqueIdentifier>
     </Filter>
     <Filter Include="Util">
-      <UniqueIdentifier>{0effd4f5-3762-49e6-a54c-5b07cc38fd38}</UniqueIdentifier>
+      <UniqueIdentifier>{5c294a1d-5c66-4086-96a7-0b966d9354e5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Config">
-      <UniqueIdentifier>{e70b63d1-1c28-45be-be05-2af2c3766320}</UniqueIdentifier>
+      <UniqueIdentifier>{104006e3-1903-49cf-8ed7-f43de50680df}</UniqueIdentifier>
     </Filter>
     <Filter Include="Auth">
-      <UniqueIdentifier>{b482d426-7fb6-43f5-bf89-23cb623e3e1e}</UniqueIdentifier>
+      <UniqueIdentifier>{20e0b708-4e29-4018-a4aa-02716b814b5f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
