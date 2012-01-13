@@ -26,47 +26,47 @@
 
 ; DO NOT EDIT - AUTOMATICALLY GENERATED FROM .s FILE
 .code 
-	ALIGN 8
-	PUBLIC __TBB_machine_fetchadd1
+    ALIGN 8
+    PUBLIC __TBB_machine_fetchadd1
 __TBB_machine_fetchadd1:
-	mov rax,rdx
-	lock xadd [rcx],al
-	ret
+    mov rax,rdx
+    lock xadd [rcx],al
+    ret
 .code 
-	ALIGN 8
-	PUBLIC __TBB_machine_fetchstore1
+    ALIGN 8
+    PUBLIC __TBB_machine_fetchstore1
 __TBB_machine_fetchstore1:
-	mov rax,rdx
-	lock xchg [rcx],al
-	ret
+    mov rax,rdx
+    lock xchg [rcx],al
+    ret
 .code 
-	ALIGN 8
-	PUBLIC __TBB_machine_cmpswp1
+    ALIGN 8
+    PUBLIC __TBB_machine_cmpswp1
 __TBB_machine_cmpswp1:
-	mov rax,r8
-	lock cmpxchg [rcx],dl
-	ret
+    mov rax,r8
+    lock cmpxchg [rcx],dl
+    ret
 .code 
-	ALIGN 8
-	PUBLIC __TBB_machine_fetchadd2
+    ALIGN 8
+    PUBLIC __TBB_machine_fetchadd2
 __TBB_machine_fetchadd2:
-	mov rax,rdx
-	lock xadd [rcx],ax
-	ret
+    mov rax,rdx
+    lock xadd [rcx],ax
+    ret
 .code 
-	ALIGN 8
-	PUBLIC __TBB_machine_fetchstore2
+    ALIGN 8
+    PUBLIC __TBB_machine_fetchstore2
 __TBB_machine_fetchstore2:
-	mov rax,rdx
-	lock xchg [rcx],ax
-	ret
+    mov rax,rdx
+    lock xchg [rcx],ax
+    ret
 .code 
-	ALIGN 8
-	PUBLIC __TBB_machine_cmpswp2
+    ALIGN 8
+    PUBLIC __TBB_machine_cmpswp2
 __TBB_machine_cmpswp2:
-	mov rax,r8
-	lock cmpxchg [rcx],dx
-	ret
+    mov rax,r8
+    lock cmpxchg [rcx],dx
+    ret
 .code
         ALIGN 8
         PUBLIC __TBB_machine_pause

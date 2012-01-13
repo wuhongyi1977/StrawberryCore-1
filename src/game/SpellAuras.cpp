@@ -1867,7 +1867,7 @@ void Aura::TriggerSpell()
     {
         // for channeled spell cast applied from aura owner to channel target (persistent aura affects already applied to true target)
         // come periodic casts applied to targets, so need seelct proper caster (ex. 15790)
-		SpellEffectEntry const* spellEffect = GetSpellProto()->GetSpellEffect(GetEffIndex());
+        SpellEffectEntry const* spellEffect = GetSpellProto()->GetSpellEffect(GetEffIndex());
 
         if (IsChanneledSpell(GetSpellProto()) && (spellEffect && spellEffect->Effect != SPELL_EFFECT_PERSISTENT_AREA_AURA))
         {

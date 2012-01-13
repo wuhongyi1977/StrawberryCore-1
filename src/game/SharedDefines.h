@@ -3006,7 +3006,7 @@ enum EncounterCreditType
 
 // we need to stick to 1 version or half of the stuff will work for someone
 // others will not and opposite
-// will only support WoW, WoW:TBC, WoW:WotLK and WoW:Cataclysm 4.3.0 client build 15005...
+// will only support WoW, WoW:TBC, WoW:WotLK and WoW:Cataclysm 4.3.0 client build 15050...
 
 #define EXPECTED_STRAWBERRYWORLD_CLIENT_BUILD        {15050, 15005, 0}
 

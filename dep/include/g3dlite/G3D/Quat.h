@@ -100,9 +100,9 @@ public:
         return fuzzyEq(q) || fuzzyEq(-q);
     }
 
-	inline Quat operator-() const {
-		return Quat(-x, -y, -z, -w);
-	}
+    inline Quat operator-() const {
+        return Quat(-x, -y, -z, -w);
+    }
 
     /**
      Returns the imaginary part (x, y, z)
@@ -129,10 +129,10 @@ public:
     void toAxisAngleRotation(
         Vector3&            axis,
         float&              angle) const {
-		double d;
-		toAxisAngleRotation(axis, d);
-		angle = (float)d;
-	}
+        double d;
+        toAxisAngleRotation(axis, d);
+        angle = (float)d;
+    }
 
     Matrix3 toRotationMatrix() const;
 
@@ -147,16 +147,16 @@ public:
 
      @cite Based on Game Physics -- David Eberly pg 538-540
      @param threshold Critical angle between between rotations at which
-	        the algorithm switches to normalized lerp, which is more
-			numerically stable in those situations. 0.0 will always slerp. 
+            the algorithm switches to normalized lerp, which is more
+            numerically stable in those situations. 0.0 will always slerp. 
      */
     Quat slerp(
         const Quat&         other,
         float               alpha,
         float               threshold = 0.05f) const;
 
-	/** Normalized linear interpolation of quaternion components. */
-	Quat nlerp(const Quat& other, float alpha) const;
+    /** Normalized linear interpolation of quaternion components. */
+    Quat nlerp(const Quat& other, float alpha) const;
 
     /**
      Negates the imaginary part.
@@ -185,7 +185,7 @@ public:
         return *this;
     }
 
-	/** @cite Based on Watt & Watt, page 360 */
+    /** @cite Based on Watt & Watt, page 360 */
     friend Quat operator* (float s, const Quat& q);
 
     inline Quat operator/(float s) const {
@@ -325,7 +325,7 @@ public:
     float& operator[] (int i);
 
     /** Generate uniform random unit quaternion (i.e. random "direction") 
-	@cite From "Uniform Random Rotations", Ken Shoemake, Graphics Gems III.
+    @cite From "Uniform Random Rotations", Ken Shoemake, Graphics Gems III.
    */
     static Quat unitRandom();
 

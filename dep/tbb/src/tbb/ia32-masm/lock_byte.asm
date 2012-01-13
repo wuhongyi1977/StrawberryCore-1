@@ -28,19 +28,19 @@
 .686
 .model flat,c
 .code 
-	ALIGN 4
-	PUBLIC c __TBB_machine_trylockbyte
+    ALIGN 4
+    PUBLIC c __TBB_machine_trylockbyte
 __TBB_machine_trylockbyte:
-	mov edx,4[esp]
-	mov al,[edx]
-	mov cl,1
-	test al,1
-	jnz __TBB_machine_trylockbyte_contended
-	lock cmpxchg [edx],cl
-	jne __TBB_machine_trylockbyte_contended
-	mov eax,1
-	ret
+    mov edx,4[esp]
+    mov al,[edx]
+    mov cl,1
+    test al,1
+    jnz __TBB_machine_trylockbyte_contended
+    lock cmpxchg [edx],cl
+    jne __TBB_machine_trylockbyte_contended
+    mov eax,1
+    ret
 __TBB_machine_trylockbyte_contended:
-	xor eax,eax
-	ret
+    xor eax,eax
+    ret
 end

@@ -521,9 +521,9 @@ public:
             return &(node->entry);
         }
 
-		bool hasMore() const {
-			return ! isDone;
-		}
+        bool hasMore() const {
+            return ! isDone;
+        }
     };
 
 

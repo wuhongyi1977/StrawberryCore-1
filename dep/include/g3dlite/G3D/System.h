@@ -472,13 +472,13 @@ public:
 #elif defined(G3D_OSX)
 
     inline uint64 System::getCycleCount() {
-		//Note:  To put off extra processing until the end, this does not
-		//return the actual clock cycle count.  It is a bus cycle count.
-		//When endCycleCount() is called, it converts the two into a difference
-		//of clock cycles
+        //Note:  To put off extra processing until the end, this does not
+        //return the actual clock cycle count.  It is a bus cycle count.
+        //When endCycleCount() is called, it converts the two into a difference
+        //of clock cycles
 
         return (uint64) UnsignedWideToUInt64(UpTime());
-		//return (uint64) mach_absolute_time();
+        //return (uint64) mach_absolute_time();
     }
 
 #endif

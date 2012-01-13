@@ -63,7 +63,7 @@
 // Detect 64-bit under various compilers
 #if (defined(_M_X64) || defined(_WIN64) || defined(__LP64__) || defined(_LP64))
 #    define G3D_64BIT
-	#if defined(WIN32)
+    #if defined(WIN32)
         #include <intrin.h>
     #endif
 #else
@@ -103,10 +103,10 @@
 
 #ifdef _MSC_VER
 // Microsoft Visual C++ 8.0 ("Express")       = 1400
-// Microsoft Visual C++ 7.1	("2003") _MSC_VER = 1310
-// Microsoft Visual C++ 7.0	("2002") _MSC_VER = 1300
-// Microsoft Visual C++ 6.0	_MSC_VER          = 1200
-// Microsoft Visual C++ 5.0	_MSC_VER          = 1100
+// Microsoft Visual C++ 7.1    ("2003") _MSC_VER = 1310
+// Microsoft Visual C++ 7.0    ("2002") _MSC_VER = 1300
+// Microsoft Visual C++ 6.0    _MSC_VER          = 1200
+// Microsoft Visual C++ 5.0    _MSC_VER          = 1100
 
 // Turn off warnings about deprecated C routines
 #   pragma warning (disable : 4996)
@@ -160,17 +160,17 @@
 
     // DLL runtime
     #ifndef _DLL
-	    #define _DLL
+        #define _DLL
     #endif
 
     // Multithreaded runtime
     #ifndef _MT
-	    #define _MT 1
+        #define _MT 1
     #endif
 
     // Ensure that we aren't forced into the static lib
     #ifdef _STATIC_CPPLIB
-	    #undef _STATIC_CPPLIB
+        #undef _STATIC_CPPLIB
     #endif
 
     #ifdef _DEBUG
@@ -195,7 +195,7 @@
         // zlib was linked against the release MSVCRT; force
         // the debug version.
 #        pragma comment(linker, "/NODEFAULTLIB:MSVCRT.LIB")
-#	 endif
+#     endif
 
 
 #    ifndef WIN32_LEAN_AND_MEAN
