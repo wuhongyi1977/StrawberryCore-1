@@ -215,6 +215,24 @@ enum SplineFlags
 {
     SPLINEFLAG_WALKMODE     = 0x00001000,
     SPLINEFLAG_FLYING       = 0x00002000,
+
+    SPLINEFLAG_GLIDE = SPLINEFLAG_WALKMODE | SPLINEFLAG_FLYING,
+};
+
+enum SplineMode
+{
+    SPLINEMODE_LINEAR       = 0,
+    SPLINEMODE_CATMULL_ROM  = 1,
+    SPLINEMODE_BEZIER3      = 2
+};
+
+enum SplineType
+{
+    SPLINETYPE_NORMAL        = 0,
+    SPLINETYPE_STOP          = 1,
+    SPLINETYPE_FACING_SPOT   = 2,
+    SPLINETYPE_FACING_TARGET = 3,
+    SPLINETYPE_FACING_ANGLE  = 4
 };
 
 // from `creature_addon` and `creature_template_addon`tables

@@ -649,34 +649,6 @@ void WorldSession::HandlePlayerLoginOpcode( WorldPacket & recv_data )
 
     DEBUG_LOG( "WORLD: Recvd Player Logon Message" );
 
-    // 16 - 0
-    // 20 - 4
-    // 23 - 7
-    // 17 - 1
-    // 19 - 3
-    // 18 - 2
-    // 21 - 5
-    // 22 - 6
-    // 
-
-    // 20 - 4
-    // 17 - 1
-    // 23 - 7
-    // 18 - 2
-    // 22 - 6
-    // 21 - 5
-    // 19 - 3
-    // 16 - 0
-
-    // 21 - 5
-    // 16 - 0
-    // 19 - 3
-    // 20 - 4
-    // 23 - 7
-    // 18 - 2
-    // 22 - 6
-    // 17 - 1
-
     BitStream mask = recv_data.ReadBitStream(8);
 
     ByteBuffer bytes(8, true);

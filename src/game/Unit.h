@@ -1419,6 +1419,8 @@ class STRAWBERRY_DLL_SPEC Unit : public WorldObject
         bool isSpiritService() const { return HasFlag( UNIT_NPC_FLAGS, UNIT_NPC_FLAG_SPIRITHEALER | UNIT_NPC_FLAG_SPIRITGUIDE ); }
 
         bool IsTaxiFlying()  const { return hasUnitState(UNIT_STAT_TAXI_FLIGHT); }
+        
+        bool isInFlight()  const { return hasUnitState(UNIT_STAT_DISTRACTED); }
 
         bool isInCombat()  const { return HasFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_IN_COMBAT); }
         void SetInCombatState(bool PvP, Unit* enemy = NULL);
@@ -1991,6 +1993,8 @@ class STRAWBERRY_DLL_SPEC Unit : public WorldObject
         float GetTransOffsetO() const { return m_movementInfo.GetTransportPos()->o; }
         uint32 GetTransTime() const { return m_movementInfo.GetTransportTime(); }
         int8 GetTransSeat() const { return m_movementInfo.GetTransportSeat(); }
+
+        uint8 GetTransGUIDIndex(uint8 index) const;
 
         // Vehicle system
         void EnterVehicle(VehicleKit *vehicle, int8 seatId = -1);

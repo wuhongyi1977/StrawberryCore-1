@@ -10682,6 +10682,17 @@ void Unit::MonsterMoveWithSpeed(float x, float y, float z, float speed, bool gen
     init.Launch();
 }
 
+uint8 Unit::GetTransGUIDIndex(uint8 index) const
+{
+    uint64 guid = 0;
+    if (GetVehicle())
+        guid = GetVehicle()->GetBase()->GetObjectGuid();
+    else if (GetTransport())
+        guid = GetTransport()->GetObjectGuid();
+
+    return ((uint8*)&guid)[index];
+}
+
 void Unit::RemoveVehicleKit()
 {
     if (!m_pVehicleKit)
