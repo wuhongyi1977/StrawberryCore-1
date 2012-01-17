@@ -188,6 +188,23 @@ class ByteBuffer
             return b;
         }
 
+        void WriteGuidMask(uint64 guid, uint8* maskOrder, uint8 maskCount)
+        {
+            uint8* guidByte = ((uint8*)&guid);
+
+            for (uint8 i = 0; i < maskCount; i++)
+                WriteBit(guidByte[maskOrder[i]]);
+        }
+
+        void WriteGuidBytes(uint64 guid, uint8* byteOrder, uint8 byteCount, uint8 bytePos)
+        {
+            uint8* guidByte = ((uint8*)&guid);
+
+            for (uint8 i = 0; i < byteCount; i++)
+                if (guidByte[byteOrder[i + bytePos]])
+                    (*this) << uint8(guidByte[byteOrder[i + bytePos]] ^ 1);
+        }
+
         template <typename T> void put(size_t pos, T value)
         {
             EndianConvert(value);
