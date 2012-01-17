@@ -169,7 +169,10 @@ void WorldSession::HandleCreatureStatsOpcode( WorldPacket & recv_data )
         data << uint8(0) << uint8(0) << uint8(0);           // name2, name3, name4, always empty
         data << subName;
         data << ci->IconName;                               // "Directions" for guard, string for Icons 2.3.0
-        data << uint32(ci->type_flags);                     // flags
+
+        for (int i = 0; i < 2; ++i)
+            data << uint32(ci->type_flags[i]);              // flags
+
         data << uint32(ci->type);                           // CreatureType.dbc
         data << uint32(ci->family);                         // CreatureFamily.dbc
         data << uint32(ci->rank);                           // Creature Rank (elite, boss, etc)
@@ -185,6 +188,7 @@ void WorldSession::HandleCreatureStatsOpcode( WorldPacket & recv_data )
         for(uint32 i = 0; i < 6; ++i)
             data << uint32(ci->questItems[i]);              // itemId[6], quest drop
         data << uint32(ci->movementId);                     // CreatureMovementInfo.dbc
+        data << uint32(ci->Unknown);
         SendPacket( &data );
         DEBUG_LOG( "WORLD: Sent SMSG_CREATURE_STATS" );
     }
@@ -230,7 +234,7 @@ void WorldSession::HandleGameObjectStatsOpcode( WorldPacket & recv_data )
                     CastBarCaption = gl->CastBarCaption[loc_idx];
             }
         }
-        DETAIL_LOG("WORLD: CMSG_GAMEOBJECT_QUERY '%s' - Entry: %u. ", info->name, entryID);
+        DETAIL_LOG("WORLD: CMSG_GAME_OBJECT_STATS '%s' - Entry: %u. ", info->name, entryID);
         WorldPacket data ( CMSG_GAME_OBJECT_STATS, 150 );
         data << uint32(entryID);
         data << uint32(info->type);
@@ -240,21 +244,24 @@ void WorldSession::HandleGameObjectStatsOpcode( WorldPacket & recv_data )
         data << IconName;                                   // 2.0.3, string. Icon name to use instead of default icon for go's (ex: "Attack" makes sword)
         data << CastBarCaption;                             // 2.0.3, string. Text will appear in Cast Bar when using GO (ex: "Collecting")
         data << info->unk1;                                 // 2.0.3, string
-        data.append(info->raw.data, 24);
+        data.append(info->raw.data, 32);
         data << float(info->size);                          // go size
+
         for(uint32 i = 0; i < 6; ++i)
             data << uint32(info->questItems[i]);            // itemId[6], quest drop
+
+        data << uint32(info->Unknown);
         SendPacket( &data );
-        DEBUG_LOG( "WORLD: Sent CMSG_GAME_OBJECT_STATS" );
+        DEBUG_LOG( "WORLD: Sent SMSG_GAME_OBJECT_STATS" );
     }
     else
     {
-        DEBUG_LOG("WORLD: CMSG_GAMEOBJECT_QUERY - Guid: %s Entry: %u Missing gameobject info!",
+        DEBUG_LOG("WORLD: CMSG_GAME_OBJECT_STATS - Guid: %s Entry: %u Missing gameobject info!",
             guid.GetString().c_str(), entryID);
         WorldPacket data ( CMSG_GAME_OBJECT_STATS, 4 );
         data << uint32(entryID | 0x80000000);
         SendPacket( &data );
-        DEBUG_LOG( "WORLD: Sent CMSG_GAME_OBJECT_STATS" );
+        DEBUG_LOG( "WORLD: Sent SMSG_GAME_OBJECT_STATS" );
     }
 }
 

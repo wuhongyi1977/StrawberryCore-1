@@ -1151,6 +1151,7 @@ CREATE TABLE `creature_template` (
   `rangedattackpower` smallint(5) unsigned NOT NULL DEFAULT '0',
   `type` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `type_flags` int(10) unsigned NOT NULL DEFAULT '0',
+  `type_flags2` int(10) unsigned NOT NULL DEFAULT '0',
   `lootid` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `pickpocketloot` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `skinloot` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -1184,6 +1185,7 @@ CREATE TABLE `creature_template` (
   `questItem5` int(11) unsigned NOT NULL DEFAULT '0',
   `questItem6` int(11) unsigned NOT NULL DEFAULT '0',
   `movementId` int(11) unsigned NOT NULL DEFAULT '0',
+  `Unknown` smallint(5) unsigned NOT NULL DEFAULT '0',
   `RegenHealth` tinyint(3) unsigned NOT NULL DEFAULT '1',
   `vehicle_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `equipment_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -1198,8 +1200,8 @@ CREATE TABLE `creature_template` (
 -- ----------------------------
 -- Records of creature_template
 -- ----------------------------
-INSERT INTO creature_template VALUES ('1', '0', '0', '0', '0', '0', '10045', '0', '0', '0', 'Waypoint(Only GM can see it)', 'Visual', null, '0', '1', '1', '64', '64', '0', '0', '0', '5', '35', '35', '0', '0.91', '1.14286', '1', '0', '2', '3', '0', '10', '1', '2000', '2200', '8', '4096', '0', '0', '0', '0', '0', '0', '1', '2', '100', '8', '5242886', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '3', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '130', '');
-INSERT INTO creature_template VALUES ('2', '0', '0', '0', '0', '0', '50', '0', '0', '0', 'TestNPC', null, null, '0', '1', '1', '64', '64', '0', '0', '0', '5', '35', '35', '0', '1', '1.14286', '1', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '3', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '');
+INSERT INTO creature_template VALUES ('1', '0', '0', '0', '0', '0', '10045', '0', '0', '0', 'Waypoint(Only GM can see it)', 'Visual', null, '0', '1', '1', '64', '64', '0', '0', '0', '5', '35', '35', '0', '0.91', '1.14286', '1', '0', '2', '3', '0', '10', '1', '2000', '2200', '8', '4096', '0', '0', '0', '0', '0', '0', '1', '2', '100', '8', '5242886', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '3', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '130', '');
+INSERT INTO creature_template VALUES ('2', '0', '0', '0', '0', '0', '50', '0', '0', '0', 'TestNPC', null, null, '0', '1', '1', '64', '64', '0', '0', '0', '5', '35', '35', '0', '1', '1.14286', '1', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '3', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '');
 
 -- ----------------------------
 -- Table structure for `creature_template_addon`
@@ -1582,6 +1584,15 @@ CREATE TABLE `gameobject_template` (
   `data21` int(10) unsigned NOT NULL DEFAULT '0',
   `data22` int(10) unsigned NOT NULL DEFAULT '0',
   `data23` int(10) unsigned NOT NULL DEFAULT '0',
+  `data24` int(10) unsigned NOT NULL DEFAULT '0',
+  `data25` int(10) unsigned NOT NULL DEFAULT '0',
+  `data26` int(10) unsigned NOT NULL DEFAULT '0',
+  `data27` int(10) unsigned NOT NULL DEFAULT '0',
+  `data28` int(10) unsigned NOT NULL DEFAULT '0',
+  `data29` int(10) unsigned NOT NULL DEFAULT '0',
+  `data30` int(10) unsigned NOT NULL DEFAULT '0',
+  `data31` int(10) unsigned NOT NULL DEFAULT '0',
+  `Unknown` int(10) unsigned NOT NULL DEFAULT '0',
   `mingold` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `maxgold` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `ScriptName` varchar(64) NOT NULL DEFAULT '',
