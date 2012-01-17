@@ -28,7 +28,7 @@
 OpcodeHandler opcodeTable[NUM_MSG_TYPES];
 OpcodeTableContainer opcodeTableMap;
 
-uint16 opcodesEnumToNumber[NUM_OPCODES];
+uint16 opcodesEnumToNumber[MAX_OPCODE_VALUE];
 
 void OpcodeTableHandler::LoadOpcodesFromDB()
 {
@@ -87,81 +87,63 @@ static void DefineOpcode(Opcodes opcodeEnum, const char* name, SessionStatus sta
 
 void InitOpcodeTable()
 {
-    for( int i = 0; i < NUM_MSG_TYPES; ++i )
+    for(uint16 i = 0; i < NUM_MSG_TYPES; ++i)
     {
-        opcodeTable[i].name = "UNKNOWN";
-        opcodeTable[i].status = STATUS_NEVER;
+        opcodeTable[i].name             = "UNKNOWN";
+        opcodeTable[i].status           = STATUS_NEVER;
         opcodeTable[i].packetProcessing = PROCESS_INPLACE;
-        opcodeTable[i].handler = &WorldSession::Handle_NULL;
+        opcodeTable[i].handler          = &WorldSession::HandleNULL;
     }
 
-    // ClientAuthConnection
-    OPCODE(MSG_CHECK_CONNECTION,              STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_EarlyProccess           );
-    OPCODE(SMSG_AUTH_CHALLENGE,               STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-    OPCODE(CMSG_AUTH_SESSION,                 STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_EarlyProccess           );
-    OPCODE(SMSG_AUTH_RESPONSE,                STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
+    // Authentication
+    OPCODE(MSG_WOW_CONNECTION,                STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleEarlyProccess           );
+    OPCODE(SMSG_AUTH_CHALLENGE,               STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+    OPCODE(CMSG_AUTH_SESSION,                 STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleEarlyProccess           );
+    OPCODE(SMSG_AUTH_RESPONSE,                STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
 
-    // Warden
-    OPCODE(SMSG_WARDEN_DATA,                  STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
+    // Realmlist
+    OPCODE(CMSG_REALM_SPLIT_STATE,            STATUS_AUTHED,   PROCESS_THREADUNSAFE, &WorldSession::HandleRealmSplitState         );
+    OPCODE(SMSG_REALM_SPLIT_MSG,              STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
 
     // Addons
-    OPCODE(SMSG_ADDON_INFO,                   STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
+    OPCODE(SMSG_ADDON_INFO,                   STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
 
-    // Cache
-    OPCODE(SMSG_CLIENTCACHE_VERSION,          STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
+    // Characterlist
+    OPCODE(CMSG_REQUEST_CHARACTER_ENUM,       STATUS_AUTHED,   PROCESS_THREADUNSAFE, &WorldSession::HandleCharEnumOpcode          );
+    OPCODE(SMSG_CHAR_ENUM,                    STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+    OPCODE(CMSG_REQUEST_CHARACTER_CREATE,     STATUS_AUTHED,   PROCESS_THREADUNSAFE, &WorldSession::HandleCharCreateOpcode        );
+    OPCODE(SMSG_CHAR_CREATE,                  STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+    OPCODE(CMSG_REQUEST_CHARACTER_DELETE,     STATUS_AUTHED,   PROCESS_THREADUNSAFE, &WorldSession::HandleCharDeleteOpcode        );
+    OPCODE(SMSG_CHAR_DELETE,                  STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
 
-    // Char list
-    OPCODE(CMSG_CHAR_ENUM,                    STATUS_AUTHED, PROCESS_THREADUNSAFE, &WorldSession::HandleCharEnumOpcode           );
-    
-    // Realm list
-    OPCODE(CMSG_REALM_SPLIT,                  STATUS_AUTHED, PROCESS_THREADUNSAFE, &WorldSession::HandleRealmSplitOpcode         );
+    // World enter
+    OPCODE(CMSG_PLAYER_LOGIN,                 STATUS_AUTHED,   PROCESS_THREADUNSAFE, &WorldSession::HandlePlayerLoginOpcode       );
+    OPCODE(CMSG_LOADING_SCREEN_NOTIFY,        STATUS_AUTHED,   PROCESS_THREADUNSAFE, &WorldSession::HandleLoadingScreenNotify     );
 
-    // Char list
-    OPCODE(SMSG_CHAR_ENUM,                    STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
+    // World
+    OPCODE(SMSG_UPDATE_OBJECT,                STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+    OPCODE(CMSG_READY_FOR_ACCOUNT_DATA_TIMES, STATUS_AUTHED,   PROCESS_THREADUNSAFE, &WorldSession::HandleReadyForAccountDataTimes);
+    OPCODE(SMSG_ACCOUNT_DATA_INITIALIZED,     STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+    OPCODE(CMSG_TIME_SYNC_RESPONSE,           STATUS_LOGGEDIN, PROCESS_THREADUNSAFE, &WorldSession::HandleTimeSyncResp            );
+    OPCODE(SMSG_TIME_SYNC_REQ,                STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+    OPCODE(SMSG_POWER_UPDATE,                 STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+    OPCODE(CMSG_ZONEUPDATE,                   STATUS_LOGGEDIN, PROCESS_THREADUNSAFE, &WorldSession::HandleZoneUpdateOpcode        );
+    OPCODE(CMSG_KEEP_ALIVE,                   STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleEarlyProccess           );
+    OPCODE(CMSG_PING,                         STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleEarlyProccess           );
+    OPCODE(SMSG_PONG,                         STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+    OPCODE(SMSG_LOGIN_VERIFY_WORLD,           STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+    OPCODE(SMSG_INIT_WORLD_STATES,            STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+    OPCODE(SMSG_FEATURE_SYSTEM_STATUS,        STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+    OPCODE(SMSG_MONSTER_MOVE,                 STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
 
-    // Realm list
-    OPCODE(SMSG_REALM_SPLIT,                  STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-    
-    // Char list
-    OPCODE(SMSG_COMPRESSED_CHAR_ENUM,         STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-    
-    // Char creation
-    OPCODE(CMSG_CHAR_CREATE,                  STATUS_AUTHED, PROCESS_THREADUNSAFE, &WorldSession::HandleCharCreateOpcode         );
-    OPCODE(SMSG_CHAR_CREATE,                  STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
+    // Stats and Caches
+    OPCODE(CMSG_CREATURE_STATS,               STATUS_LOGGEDIN, PROCESS_THREADUNSAFE, &WorldSession::HandleCreatureStatsOpcode     );
+    OPCODE(SMSG_CREATURE_STATS,               STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+    OPCODE(CMSG_GAME_OBJECT_STATS,            STATUS_LOGGEDIN, PROCESS_THREADUNSAFE, &WorldSession::HandleGameObjectStatsOpcode   );
+    OPCODE(SMSG_GAME_OBJECT_STATS,            STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+    OPCODE(CMSG_NAME_CACHE,                   STATUS_LOGGEDIN, PROCESS_THREADUNSAFE, &WorldSession::HandleNameCacheOpcode         );
+    OPCODE(SMSG_NAME_CACHE,                   STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
 
-    // Time / Ping
-    OPCODE(CMSG_READY_FOR_ACCOUNT_DATA_TIMES, STATUS_AUTHED, PROCESS_THREADUNSAFE, &WorldSession::HandleReadyForAccountDataTimesOpcode);
-    OPCODE(SMSG_ACCOUNT_DATA_TIMES,           STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-    OPCODE(SMSG_TIME_SYNC_REQ,                STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-    OPCODE(CMSG_PING,                         STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_EarlyProccess           );
-    OPCODE(SMSG_PONG,                         STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-
-    // Player
-    OPCODE(SMSG_POWER_UPDATE,                 STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-
-    // World login
-    OPCODE(CMSG_LOADING_SCREEN_NOTIFY,        STATUS_AUTHED, PROCESS_THREADUNSAFE, &WorldSession::HandleLoadingScreenNotify      );
-    OPCODE(CMSG_PLAYER_LOGIN,                 STATUS_AUTHED, PROCESS_THREADUNSAFE, &WorldSession::HandlePlayerLoginOpcode        );
-    OPCODE(SMSG_UPDATE_OBJECT,                STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-    OPCODE(SMSG_COMPRESSED_UPDATE_OBJECT,     STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-    OPCODE(SMSG_NEW_WORLD,                    STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-    OPCODE(SMSG_INIT_WORLD_STATES,            STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-    OPCODE(SMSG_LOGIN_VERIFY_WORLD,           STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-    OPCODE(SMSG_ACTION_BUTTONS,               STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-    OPCODE(SMSG_FEATURE_SYSTEM_STATUS,        STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-    OPCODE(SMSG_TUTORIAL_FLAGS,               STATUS_NEVER,  PROCESS_INPLACE,      &WorldSession::Handle_ServerSide              );
-
-    // WBD Query handler
-    OPCODE(CMSG_NAME_QUERY,                   STATUS_LOGGEDIN, PROCESS_THREADUNSAFE, &WorldSession::HandleNameQueryOpcode           );
-    OPCODE(SMSG_NAME_QUERY_RESPONSE,          STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::Handle_ServerSide               );
-    OPCODE(CMSG_PAGE_TEXT_QUERY,              STATUS_LOGGEDIN, PROCESS_THREADUNSAFE, &WorldSession::HandlePageTextQueryOpcode       );
-    OPCODE(SMSG_PAGE_TEXT_QUERY_RESPONSE,     STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::Handle_ServerSide               );
-    OPCODE(CMSG_QUEST_QUERY,                  STATUS_LOGGEDIN, PROCESS_THREADUNSAFE, &WorldSession::HandleQuestQueryOpcode          );
-    OPCODE(SMSG_QUEST_QUERY_RESPONSE,         STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::Handle_ServerSide               );
-    OPCODE(CMSG_GAMEOBJECT_QUERY,             STATUS_LOGGEDIN, PROCESS_INPLACE,      &WorldSession::HandleGameObjectQueryOpcode     );
-    OPCODE(CMSG_CREATURE_QUERY,               STATUS_LOGGEDIN, PROCESS_INPLACE,      &WorldSession::HandleCreatureQueryOpcode       );
-    OPCODE(SMSG_CREATURE_QUERY_RESPONSE,      STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::Handle_ServerSide               );
-    OPCODE(CMSG_NPC_TEXT_QUERY,               STATUS_LOGGEDIN, PROCESS_THREADUNSAFE, &WorldSession::HandleNpcTextQueryOpcode        );
-    OPCODE(SMSG_NPC_TEXT_UPDATE,              STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::Handle_ServerSide               );
-    OPCODE(SMSG_GAMEOBJECT_QUERY_RESPONSE,    STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::Handle_ServerSide               );
-}
+    // Compressed
+    //OPCODE(SMSG_COMPRESSED_UPDATE_OBJECT,     STATUS_NEVER,    PROCESS_INPLACE,      &WorldSession::HandleServerSide              );
+};

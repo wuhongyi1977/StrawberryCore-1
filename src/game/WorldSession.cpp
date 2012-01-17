@@ -585,21 +585,21 @@ const char * WorldSession::GetStrawberryString( int32 entry ) const
     return sObjectMgr.GetStrawberryString(entry,GetSessionDbLocaleIndex());
 }
 
-void WorldSession::Handle_NULL( WorldPacket& recvPacket )
+void WorldSession::HandleNULL( WorldPacket& recvPacket )
 {
     DEBUG_LOG("SESSION: received unimplemented opcode %s (0x%.4X)",
         LookupOpcodeName(recvPacket.GetOpcode()),
         recvPacket.GetOpcode());
 }
 
-void WorldSession::Handle_EarlyProccess( WorldPacket& recvPacket )
+void WorldSession::HandleEarlyProccess( WorldPacket& recvPacket )
 {
     sLog.outError( "SESSION: received opcode %s (0x%.4X) that must be processed in WorldSocket::OnRead",
         LookupOpcodeName(recvPacket.GetOpcode()),
         recvPacket.GetOpcode());
 }
 
-void WorldSession::Handle_ServerSide( WorldPacket& recvPacket )
+void WorldSession::HandleServerSide( WorldPacket& recvPacket )
 {
     sLog.outError("SESSION: received server-side opcode %s (0x%.4X)",
         LookupOpcodeName(recvPacket.GetOpcode()),
@@ -720,7 +720,7 @@ void WorldSession::SetAccountData(AccountDataType type, time_t time_, std::strin
 
 void WorldSession::SendAccountDataTimes(uint32 mask)
 {
-    WorldPacket data( SMSG_ACCOUNT_DATA_TIMES, 4+1+4+8*4 ); // changed in WotLK
+    WorldPacket data( SMSG_ACCOUNT_DATA_INITIALIZED, 4+1+4+8*4 ); // changed in WotLK
     data << uint32(time(NULL));                             // unix time of something
     data << uint8(1);
     data << uint32(mask);                                   // type mask

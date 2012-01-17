@@ -34,12 +34,12 @@
 #include "Pet.h"
 #include "MapManager.h"
 
-void WorldSession::SendNameQueryOpcode(Player *p)
+void WorldSession::SendNameCacheOpcode(Player *p)
 {
     if(!p)
         return;
                                                             // guess size
-    WorldPacket data( SMSG_NAME_QUERY_RESPONSE, (8+1+1+1+1+1+10) );
+    WorldPacket data( SMSG_NAME_CACHE, (8+1+1+1+1+1+10) );
     data << p->GetPackGUID();                               // player guid
     data << uint8(0);                                       // added in 3.1; if > 1, then end of packet
     data << p->GetName();                                   // played name
@@ -59,9 +59,9 @@ void WorldSession::SendNameQueryOpcode(Player *p)
     SendPacket(&data);
 }
 
-void WorldSession::SendNameQueryOpcodeFromDB(ObjectGuid guid)
+void WorldSession::SendNameCacheOpcodeFromDB(ObjectGuid guid)
 {
-    CharacterDatabase.AsyncPQuery(&WorldSession::SendNameQueryOpcodeFromDBCallBack, GetAccountId(),
+    CharacterDatabase.AsyncPQuery(&WorldSession::SendNameCacheOpcodeFromDBCallBack, GetAccountId(),
         !sWorld.getConfig(CONFIG_BOOL_DECLINED_NAMES_USED) ?
     //   ------- Query Without Declined Names --------
     //          0     1     2     3       4
@@ -77,7 +77,7 @@ void WorldSession::SendNameQueryOpcodeFromDB(ObjectGuid guid)
         guid.GetCounter());
 }
 
-void WorldSession::SendNameQueryOpcodeFromDBCallBack(QueryResult *result, uint32 accountId)
+void WorldSession::SendNameCacheOpcodeFromDBCallBack(QueryResult *result, uint32 accountId)
 {
     if(!result)
         return;
@@ -102,7 +102,7 @@ void WorldSession::SendNameQueryOpcodeFromDBCallBack(QueryResult *result, uint32
         pClass       = fields[4].GetUInt8();
     }
                                                             // guess size
-    WorldPacket data( SMSG_NAME_QUERY_RESPONSE, (8+1+1+1+1+1+1+10) );
+    WorldPacket data( SMSG_NAME_CACHE, (8+1+1+1+1+1+1+10) );
     data << ObjectGuid(HIGHGUID_PLAYER, lowguid).WriteAsPacked();
     data << uint8(0);                                       // added in 3.1; if > 1, then end of packet
     data << name;
@@ -125,7 +125,7 @@ void WorldSession::SendNameQueryOpcodeFromDBCallBack(QueryResult *result, uint32
     delete result;
 }
 
-void WorldSession::HandleNameQueryOpcode( WorldPacket & recv_data )
+void WorldSession::HandleNameCacheOpcode( WorldPacket & recv_data )
 {
     ObjectGuid guid;
 
@@ -134,9 +134,9 @@ void WorldSession::HandleNameQueryOpcode( WorldPacket & recv_data )
     Player *pChar = sObjectMgr.GetPlayer(guid);
 
     if (pChar)
-        SendNameQueryOpcode(pChar);
+        SendNameCacheOpcode(pChar);
     else
-        SendNameQueryOpcodeFromDB(guid);
+        SendNameCacheOpcodeFromDB(guid);
 }
 
 void WorldSession::HandleQueryTimeOpcode( WorldPacket & /*recv_data*/ )
@@ -145,7 +145,7 @@ void WorldSession::HandleQueryTimeOpcode( WorldPacket & /*recv_data*/ )
 }
 
 /// Only _static_ data send in this packet !!!
-void WorldSession::HandleCreatureQueryOpcode( WorldPacket & recv_data )
+void WorldSession::HandleCreatureStatsOpcode( WorldPacket & recv_data )
 {
     uint32 entry;
     recv_data >> entry;
@@ -161,9 +161,9 @@ void WorldSession::HandleCreatureQueryOpcode( WorldPacket & recv_data )
         char const* subName = ci->SubName;
         sObjectMgr.GetCreatureLocaleStrings(entry, loc_idx, &name, &subName);
 
-        DETAIL_LOG("WORLD: CMSG_CREATURE_QUERY '%s' - Entry: %u.", ci->Name, entry);
+        DETAIL_LOG("WORLD: CMSG_CREATURE_STATS '%s' - Entry: %u.", ci->Name, entry);
                                                             // guess size
-        WorldPacket data( SMSG_CREATURE_QUERY_RESPONSE, 100 );
+        WorldPacket data( SMSG_CREATURE_STATS, 100 );
         data << uint32(entry);                              // creature entry
         data << name;
         data << uint8(0) << uint8(0) << uint8(0);           // name2, name3, name4, always empty
@@ -186,21 +186,21 @@ void WorldSession::HandleCreatureQueryOpcode( WorldPacket & recv_data )
             data << uint32(ci->questItems[i]);              // itemId[6], quest drop
         data << uint32(ci->movementId);                     // CreatureMovementInfo.dbc
         SendPacket( &data );
-        DEBUG_LOG( "WORLD: Sent SMSG_CREATURE_QUERY_RESPONSE" );
+        DEBUG_LOG( "WORLD: Sent SMSG_CREATURE_STATS" );
     }
     else
     {
-        DEBUG_LOG("WORLD: CMSG_CREATURE_QUERY - Guid: %s Entry: %u NO CREATURE INFO!",
+        DEBUG_LOG("WORLD: CMSG_CREATURE_STATS - Guid: %s Entry: %u NO CREATURE INFO!",
             guid.GetString().c_str(), entry);
-        WorldPacket data( SMSG_CREATURE_QUERY_RESPONSE, 4 );
+        WorldPacket data( SMSG_CREATURE_STATS, 4 );
         data << uint32(entry | 0x80000000);
         SendPacket( &data );
-        DEBUG_LOG( "WORLD: Sent SMSG_CREATURE_QUERY_RESPONSE" );
+        DEBUG_LOG( "WORLD: Sent SMSG_CREATURE_STATS" );
     }
 }
 
 /// Only _static_ data send in this packet !!!
-void WorldSession::HandleGameObjectQueryOpcode( WorldPacket & recv_data )
+void WorldSession::HandleGameObjectStatsOpcode( WorldPacket & recv_data )
 {
     uint32 entryID;
     recv_data >> entryID;
@@ -231,7 +231,7 @@ void WorldSession::HandleGameObjectQueryOpcode( WorldPacket & recv_data )
             }
         }
         DETAIL_LOG("WORLD: CMSG_GAMEOBJECT_QUERY '%s' - Entry: %u. ", info->name, entryID);
-        WorldPacket data ( SMSG_GAMEOBJECT_QUERY_RESPONSE, 150 );
+        WorldPacket data ( CMSG_GAME_OBJECT_STATS, 150 );
         data << uint32(entryID);
         data << uint32(info->type);
         data << uint32(info->displayId);
@@ -245,16 +245,16 @@ void WorldSession::HandleGameObjectQueryOpcode( WorldPacket & recv_data )
         for(uint32 i = 0; i < 6; ++i)
             data << uint32(info->questItems[i]);            // itemId[6], quest drop
         SendPacket( &data );
-        DEBUG_LOG( "WORLD: Sent SMSG_GAMEOBJECT_QUERY_RESPONSE" );
+        DEBUG_LOG( "WORLD: Sent CMSG_GAME_OBJECT_STATS" );
     }
     else
     {
         DEBUG_LOG("WORLD: CMSG_GAMEOBJECT_QUERY - Guid: %s Entry: %u Missing gameobject info!",
             guid.GetString().c_str(), entryID);
-        WorldPacket data ( SMSG_GAMEOBJECT_QUERY_RESPONSE, 4 );
+        WorldPacket data ( CMSG_GAME_OBJECT_STATS, 4 );
         data << uint32(entryID | 0x80000000);
         SendPacket( &data );
-        DEBUG_LOG( "WORLD: Sent SMSG_GAMEOBJECT_QUERY_RESPONSE" );
+        DEBUG_LOG( "WORLD: Sent CMSG_GAME_OBJECT_STATS" );
     }
 }
 

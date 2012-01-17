@@ -1301,15 +1301,15 @@ void WorldSession::HandleComplainOpcode( WorldPacket & recv_data )
     DEBUG_LOG("REPORT SPAM: type %u, spammer %s, unk1 %u, unk2 %u, unk3 %u, unk4 %u, message %s", spam_type, spammerGuid.GetString().c_str(), unk1, unk2, unk3, unk4, description.c_str());
 }
 
-void WorldSession::HandleRealmSplitOpcode( WorldPacket & recv_data )
+void WorldSession::HandleRealmSplitState( WorldPacket & recv_data )
 {
-    DEBUG_LOG("CMSG_REALM_SPLIT");
+    DEBUG_LOG("CMSG_REALM_SPLIT_STATE");
 
     uint32 unk;
     std::string split_date = "01/01/01";
     recv_data >> unk;
 
-    WorldPacket data(SMSG_REALM_SPLIT, 4+4+split_date.size()+1);
+    WorldPacket data(SMSG_REALM_SPLIT_MSG, 4+4+split_date.size()+1);
     data << unk;
     data << uint32(0x00000000);                             // realm split state
     // split states:
@@ -1575,7 +1575,7 @@ void WorldSession::HandleUITimeRequestOpcode(WorldPacket& /*recv_data*/)
     SendPacket(&data);
 }
 
-void WorldSession::HandleReadyForAccountDataTimesOpcode(WorldPacket& /*recv_data*/)
+void WorldSession::HandleReadyForAccountDataTimes(WorldPacket& /*recv_data*/)
 {
     // empty opcode
     DEBUG_LOG("WORLD: CMSG_READY_FOR_ACCOUNT_DATA_TIMES");

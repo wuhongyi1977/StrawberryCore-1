@@ -25,94 +25,62 @@
 
 enum Opcodes
 {
-    // ClientAuthConnection
-    MSG_CHECK_CONNECTION,
+    // Authentication
+    MSG_WOW_CONNECTION,
     SMSG_AUTH_CHALLENGE,
     CMSG_AUTH_SESSION,
     SMSG_AUTH_RESPONSE,
 
-    // Warden
-    SMSG_WARDEN_DATA,
+    // Realmlist
+    CMSG_REALM_SPLIT_STATE,
+    SMSG_REALM_SPLIT_MSG,
 
     // Addons
     SMSG_ADDON_INFO,
 
-    // Cache
-    SMSG_CLIENTCACHE_VERSION,
-
-    // 28192
-    // 29828
-    // 29216
-
-    // Char list
-    CMSG_CHAR_ENUM,
-
-    // Realm list
-    CMSG_REALM_SPLIT,
-
-    // 24096
-    // 3200
-
-    // Char list
+    // Characterlist
+    CMSG_REQUEST_CHARACTER_ENUM,
     SMSG_CHAR_ENUM,
-
-    // Realm list
-    SMSG_REALM_SPLIT,
-
-    // Char list
-    SMSG_COMPRESSED_CHAR_ENUM,
-
-    // 24096
-
-    // Char creation
-    CMSG_CHAR_CREATE,
+    CMSG_REQUEST_CHARACTER_CREATE,
     SMSG_CHAR_CREATE,
+    CMSG_REQUEST_CHARACTER_DELETE,
+    SMSG_CHAR_DELETE,
 
-    // World login
-    CMSG_LOADING_SCREEN_NOTIFY,
+    // World enter
     CMSG_PLAYER_LOGIN,
+    CMSG_LOADING_SCREEN_NOTIFY,
+
+    // World
     SMSG_UPDATE_OBJECT,
-    SMSG_COMPRESSED_UPDATE_OBJECT,
-    SMSG_INIT_WORLD_STATES,
-    SMSG_NEW_WORLD,
-    SMSG_LOGIN_VERIFY_WORLD,
-    SMSG_ACTION_BUTTONS,
-    SMSG_FEATURE_SYSTEM_STATUS,
-    SMSG_TUTORIAL_FLAGS,
-
-    // WDB Query
-    CMSG_NAME_QUERY,
-    SMSG_NAME_QUERY_RESPONSE,
-    CMSG_PAGE_TEXT_QUERY,
-    SMSG_PAGE_TEXT_QUERY_RESPONSE,
-    CMSG_QUEST_QUERY,
-    SMSG_QUEST_QUERY_RESPONSE,
-    CMSG_GAMEOBJECT_QUERY,
-    CMSG_CREATURE_QUERY,
-    SMSG_CREATURE_QUERY_RESPONSE,
-    CMSG_NPC_TEXT_QUERY,
-    SMSG_NPC_TEXT_UPDATE,
-    SMSG_GAMEOBJECT_QUERY_RESPONSE,
-
-    // Time / Ping
-    SMSG_TIME_SYNC_REQ,
     CMSG_READY_FOR_ACCOUNT_DATA_TIMES,
-    SMSG_ACCOUNT_DATA_TIMES,
+    SMSG_ACCOUNT_DATA_INITIALIZED,
+    CMSG_TIME_SYNC_RESPONSE,
+    SMSG_TIME_SYNC_REQ,
+    SMSG_POWER_UPDATE,
+    CMSG_ZONEUPDATE,
+    CMSG_KEEP_ALIVE,
     CMSG_PING,
     SMSG_PONG,
+    SMSG_LOGIN_VERIFY_WORLD,
+    SMSG_INIT_WORLD_STATES,
+    SMSG_FEATURE_SYSTEM_STATUS,
+    SMSG_MONSTER_MOVE,
 
-    // Player
-    SMSG_POWER_UPDATE,
+    // Stats
+    CMSG_CREATURE_STATS,
+    SMSG_CREATURE_STATS,
+    CMSG_GAME_OBJECT_STATS,
+    SMSG_GAME_OBJECT_STATS,
+    CMSG_NAME_CACHE,
+    SMSG_NAME_CACHE,
 
-    // Spells
-    SMSG_SPELL_GO,           // Add Handler
-    SMSG_AURA_UPDATE_ALL,    // Add Handler
+    // Compressed
+    SMSG_COMPRESSED_UPDATE_OBJECT,
 
-    // Player movement
+    // Movement
     SMSG_PLAYER_MOVE,
 
-    // Max enum number
-    NUM_OPCODES
+    MAX_OPCODE_VALUE
 };
 
 enum Opcodes335a
@@ -173,7 +141,6 @@ enum Opcodes335a
     CMSG_AUTH_SRP6_RECODE                           = 0x035,
     CMSG_CHAR_DELETE                                = 0x038,
     SMSG_AUTH_SRP6_RESPONSE                         = 0x039,
-    SMSG_CHAR_DELETE                                = 0x03C,
     SMSG_TRANSFER_PENDING                           = 0x03F,
     SMSG_TRANSFER_ABORTED                           = 0x040,
     SMSG_CHARACTER_LOGIN_FAILED                     = 0x041,
@@ -321,7 +288,6 @@ enum Opcodes335a
     MSG_MOVE_SET_FACING                             = 0x0DA,
     MSG_MOVE_SET_PITCH                              = 0x0DB,
     MSG_MOVE_WORLDPORT_ACK                          = 0x0DC,
-    SMSG_MONSTER_MOVE                               = 0x0DD,
     SMSG_MOVE_WATER_WALK                            = 0x0DE,
     SMSG_MOVE_LAND_WALK                             = 0x0DF,
     CMSG_MOVE_CHARM_PORT_CHEAT                      = 0x0E0,
@@ -590,7 +556,6 @@ enum Opcodes335a
     MSG_SAVE_GUILD_EMBLEM                           = 0x1F1,
     MSG_TABARDVENDOR_ACTIVATE                       = 0x1F2,
     SMSG_PLAY_SPELL_VISUAL                          = 0x1F3,
-    CMSG_ZONEUPDATE                                 = 0x1F4,
     SMSG_PARTYKILLLOG                               = 0x1F5,
     SMSG_PLAY_SPELL_IMPACT                          = 0x1F7,
     SMSG_EXPLORATION_EXPERIENCE                     = 0x1F8,
@@ -1111,7 +1076,6 @@ enum Opcodes335a
     SMSG_SPELL_CHANCE_RESIST_PUSHBACK               = 0x404,
     CMSG_IGNORE_DIMINISHING_RETURNS_CHEAT           = 0x405,
     SMSG_IGNORE_DIMINISHING_RETURNS_CHEAT           = 0x406,
-    CMSG_KEEP_ALIVE                                 = 0x407,
     SMSG_RAID_READY_CHECK_ERROR                     = 0x408,
     CMSG_OPT_OUT_OF_LOOT                            = 0x409,
     MSG_QUERY_GUILD_BANK_TEXT                       = 0x40A,
@@ -1411,6 +1375,16 @@ enum Opcodes335a
     UMSG_UNKNOWN_1332                               = 0x534, // not found
     UMSG_UNKNOWN_1333                               = 0x535, // not found
     UMSG_UNKNOWN_1334                               = 0x536, // not found
+    SMSG_NPC_TEXT_UPDATE,
+    SMSG_QUEST_QUERY_RESPONSE,
+    SMSG_PAGE_TEXT_QUERY_RESPONSE,
+    SMSG_NEW_WORLD,
+    SMSG_ACTION_BUTTONS,
+    SMSG_AURA_UPDATE_ALL,
+    SMSG_SPELL_GO,
+    SMSG_WARDEN_DATA,
+    SMSG_CLIENTCACHE_VERSION,
+    SMSG_TUTORIAL_FLAGS,
 };
 
 
@@ -1448,7 +1422,7 @@ struct OpcodeHandler
 };
 
 extern OpcodeHandler opcodeTable[NUM_MSG_TYPES];
-extern uint16 opcodesEnumToNumber[NUM_OPCODES];
+extern uint16 opcodesEnumToNumber[MAX_OPCODE_VALUE];
 
 // Lookup opcode name for human understandable logging
 inline const char* LookupOpcodeName(uint16 id)

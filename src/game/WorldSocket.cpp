@@ -245,7 +245,7 @@ int WorldSocket::open(void *a)
     m_Address = remote_addr.get_host_addr();
 
     std::string ServerToClient = "RLD OF WARCRAFT CONNECTION - SERVER TO CLIENT";
-    WorldPacket data(MSG_CHECK_CONNECTION, 46);
+    WorldPacket data(MSG_WOW_CONNECTION, 46);
 
     data << ServerToClient;
 
@@ -684,7 +684,7 @@ int WorldSocket::ProcessIncoming(WorldPacket* new_pct)
 
         switch(opcodeLoading)
         {
-            case MSG_CHECK_CONNECTION:
+            case MSG_WOW_CONNECTION:
                 return HandleAuthConnection(*new_pct);
             case CMSG_PING:
                 return HandlePing(*new_pct);

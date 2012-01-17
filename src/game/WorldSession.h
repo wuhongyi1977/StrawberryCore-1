@@ -297,9 +297,9 @@ class STRAWBERRY_DLL_SPEC WorldSession
         /// Handle the authentication waiting queue (to be completed)
         void SendAuthWaitQue(uint32 position);
 
-        void SendNameQueryOpcode(Player* p);
-        void SendNameQueryOpcodeFromDB(ObjectGuid guid);
-        static void SendNameQueryOpcodeFromDBCallBack(QueryResult *result, uint32 accountId);
+        void SendNameCacheOpcode(Player* p);
+        void SendNameCacheOpcodeFromDB(ObjectGuid guid);
+        static void SendNameCacheOpcodeFromDBCallBack(QueryResult *result, uint32 accountId);
 
         void SendTrainerList(ObjectGuid guid);
         void SendTrainerList(ObjectGuid guid, const std::string& strTitle );
@@ -405,9 +405,9 @@ class STRAWBERRY_DLL_SPEC WorldSession
 
     public:                                                 // opcodes handlers
 
-        void Handle_NULL(WorldPacket& recvPacket);          // not used
-        void Handle_EarlyProccess( WorldPacket& recvPacket);// just mark packets processed in WorldSocket::OnRead
-        void Handle_ServerSide(WorldPacket& recvPacket);    // sever side only, can't be accepted from client
+        void HandleNULL(WorldPacket& recvPacket);          // not used
+        void HandleEarlyProccess( WorldPacket& recvPacket);// just mark packets processed in WorldSocket::OnRead
+        void HandleServerSide(WorldPacket& recvPacket);    // sever side only, can't be accepted from client
         void Handle_Deprecated(WorldPacket& recvPacket);    // never used anymore by client
 
         void HandleCharEnumOpcode(WorldPacket& recvPacket);
@@ -506,13 +506,13 @@ class STRAWBERRY_DLL_SPEC WorldSession
         void HandleGameObjectUseOpcode(WorldPacket& recPacket);
         void HandleGameobjectReportUse(WorldPacket& recvPacket);
 
-        void HandleNameQueryOpcode(WorldPacket& recvPacket);
+        void HandleNameCacheOpcode(WorldPacket& recvPacket);
 
         void HandleQueryTimeOpcode(WorldPacket& recvPacket);
 
-        void HandleCreatureQueryOpcode(WorldPacket& recvPacket);
+        void HandleCreatureStatsOpcode(WorldPacket& recvPacket);
 
-        void HandleGameObjectQueryOpcode(WorldPacket& recvPacket);
+        void HandleGameObjectStatsOpcode(WorldPacket& recvPacket);
 
         void HandleMoveWorldportAckOpcode(WorldPacket& recvPacket);
         void HandleMoveWorldportAckOpcode();                // for server-side calls
@@ -793,7 +793,7 @@ class STRAWBERRY_DLL_SPEC WorldSession
         void HandleSearchLfgLeaveOpcode(WorldPacket& recv_data);
         void HandleSetLfgCommentOpcode(WorldPacket& recv_data);
         void HandleSetTitleOpcode(WorldPacket& recv_data);
-        void HandleRealmSplitOpcode(WorldPacket& recv_data);
+        void HandleRealmSplitState(WorldPacket& recv_data);
         void HandleTimeSyncResp(WorldPacket& recv_data);
         void HandleWhoisOpcode(WorldPacket& recv_data);
         void HandleResetInstancesOpcode(WorldPacket& recv_data);
@@ -871,7 +871,7 @@ class STRAWBERRY_DLL_SPEC WorldSession
         void HandleEquipmentSetDeleteOpcode(WorldPacket& recv_data);
         void HandleEquipmentSetUseOpcode(WorldPacket& recv_data);
         void HandleUITimeRequestOpcode(WorldPacket& recv_data);
-        void HandleReadyForAccountDataTimesOpcode(WorldPacket& recv_data);
+        void HandleReadyForAccountDataTimes(WorldPacket& recv_data);
         void HandleQueryQuestsCompletedOpcode(WorldPacket& recv_data);
         void HandleQuestPOIQueryOpcode(WorldPacket& recv_data);
     private:

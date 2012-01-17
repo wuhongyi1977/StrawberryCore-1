@@ -143,7 +143,7 @@ class STRAWBERRY_DLL_SPEC Object
         PackedGuid const& GetPackGUID() const { return m_PackGUID; }
         std::string GetGuidStr() const { return GetObjectGuid().GetString(); }
 
-        uint8 GetGUIDIndex(uint8 index) const
+        uint8 GetGUIDIndex( uint8 index) const
         {
             uint64 guid = GetUInt64Value(0);
             return ((uint8*)&guid)[index];
